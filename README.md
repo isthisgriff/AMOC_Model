@@ -76,30 +76,6 @@ Atmospheric warming and freshwater forcing together push the system toward colla
  
 ---
  
-## Project Structure
- 
-```
-.
-├── amoc_presentation.py    # Main interactive dashboard (recommended entry point)
-├── amoc_3box_model.py      # Extended version with scenario comparison and hysteresis plot
-└── README.md
-```
- 
-### `amoc_presentation.py` — Interactive Dashboard
-The primary file for demonstration purposes. Opens a single window containing:
-- An annotated schematic diagram of the 3-box circulation loop
-- Live plots of AMOC strength, box salinities, box temperatures, and the density driver
-- Five interactive sliders for real-time parameter adjustment
-- A plain-English status panel that updates dynamically to explain what the current state of the model means physically
- 
-### `amoc_3box_model.py` — Extended Analysis
-Runs three sequential outputs:
-1. A four-panel static scenario comparison across predefined forcing cases
-2. A hysteresis diagram sweeping Greenland freshwater flux forward and backward
-3. The interactive dashboard
- 
----
- 
 ## Installation & Usage
  
 ### Requirements
