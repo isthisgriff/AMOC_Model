@@ -2,9 +2,6 @@
 ================================================================================
   Rooth 3-Box AMOC Model  —  Presentation Dashboard
 ================================================================================
-  Run with:  python amoc_presentation.py
-  Requires:  pip install numpy scipy matplotlib
-================================================================================
 """
 
 import numpy as np
@@ -17,7 +14,7 @@ from matplotlib.widgets import Slider, Button
 import matplotlib.patheffects as pe
 
 # ──────────────────────────────────────────────────────────────────────────────
-#  PHYSICS  (unchanged from original model)
+#  PHYSICS  
 # ──────────────────────────────────────────────────────────────────────────────
 
 RHO_0  = 1025.0
@@ -112,7 +109,7 @@ def run_simulation(params):
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-#  COLOUR PALETTE
+#  COLOR PALETTE
 # ──────────────────────────────────────────────────────────────────────────────
 
 BG       = '#0d1117'
@@ -151,7 +148,7 @@ def draw_schematic(ax):
     boxes = [
         # (label, sublabel, x, y, w, h, color)
         ('NORTH\nAtlantic',  'Cold & salty\n→ dense, sinks',  0.4, 2.8, 2.2, 2.4, C_NORTH),
-        ('TROPICS',          'Warm & salty\n(high evaporation)', 3.9, 2.8, 2.2, 2.4, C_TROP),
+        ('TROPICS',          'Warm & salty\n', 3.9, 2.8, 2.2, 2.4, C_TROP),
         ('SOUTH\nAtlantic',  'Cold & fresh\n→ lighter',        7.4, 2.8, 2.2, 2.4, C_SOUTH),
     ]
 
@@ -207,7 +204,7 @@ def draw_schematic(ax):
     ax.text(8.5, 0.55, 'Antarctic melt adds\nfreshwater here →',
             ha='center', color=C_SOUTH, fontsize=6.5,
             bbox=dict(fc=C_SOUTH+'18', ec=C_SOUTH, lw=0.8, boxstyle='round,pad=0.2'))
-    ax.text(5.0, 0.1, '▲ The AMOC carries ~1.3 petawatts of heat to Europe — comparable to a million power stations',
+    ax.text(5.0, 0.1, '▲ The AMOC carries ~1.3 petawatts of heat to Europe',
             ha='center', color=TXT_DIM, fontsize=6, style='italic')
 
 
@@ -254,7 +251,7 @@ def launch_dashboard():
     fig = plt.figure(figsize=(17, 10))
     fig.patch.set_facecolor(BG)
     fig.suptitle(
-        'AMOC 3-Box Model  ·  Interactive Presentation Dashboard',
+        'AMOC 3-Box Model',
         color=TXT, fontsize=14, fontweight='bold', y=0.98
     )
 
@@ -535,7 +532,7 @@ def launch_dashboard():
 
 if __name__ == '__main__':
     print('=' * 68)
-    print('  Rooth 3-Box AMOC  —  Presentation Dashboard')
+    print('  Rooth 3-Box AMOC')
     print('  Drag sliders to explore. Close window to exit.')
     print('=' * 68)
     launch_dashboard()
